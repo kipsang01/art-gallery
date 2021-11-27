@@ -1,1 +1,10 @@
-<h1>{{title}}</h1>
+{% include 'base.html' %}
+
+{% block content%}
+    <div class="container">
+        {% include 'categorybar.html' %}
+        {% for image in images%}
+        <img src="{{image.image.url}}" class="img-thumbnail image-responsive" alt="">
+        {%endfor%}
+    </div>
+{% endblock %}
