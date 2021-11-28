@@ -34,8 +34,14 @@ class  Image(models.Model):
         self.save()
         
     @classmethod
-    def image_cat(cls, category):
-        images = cls.objects.filter(category__name=category)
+    def image_cat(cls, category_id):
+        images = cls.objects.filter(category_id=category_id)
+        return images
+    
+    
+    @classmethod
+    def search_image(cls, search_term):
+        images = cls.objects.filter(name__icontains=search_term)
         return images
     
 

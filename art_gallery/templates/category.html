@@ -1,0 +1,13 @@
+{% include 'home.html' %}
+
+{% block images%}
+
+    <div class="images d-flex flex-wrap ">
+    {% for image in images %}
+    <span class="w-25"> <img src="{{image.image.url}}" class="img-thumbnail image-responsive" alt=""> </span> 
+    {% empty %}
+    <h1>No pictures for this category</h1>
+    {%endfor%}  
+    </div>
+
+{% endblock %}
