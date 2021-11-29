@@ -1,6 +1,7 @@
-<div class="category d-flex justify-content-center">
+
+<div class="category d-flex  flex-row justify-content-around">
     {% for category in categories  %}
     
-        <span style="height: 50px; width: 50px;"> <a href="{% url 'get_category' category.id %}"> <img src="{{ image.image.url}}" alt=""> {{category}}</a> </span>
+        <span style="height: 50px; width: 50px;"> <a href="{% url 'get_category' category.id %}"> {{category}}</a> </span>
     {% endfor %}
 </div>

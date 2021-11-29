@@ -33,6 +33,17 @@ class  Image(models.Model):
     def save_image(self):
         self.save()
         
+    def delete_image(self):
+        self.delete()
+    
+    def update_image(self):
+        self.update()
+        
+    def get_image_by_id(image_id): 
+        image = Image.objects.get(id=image_id)
+        return image
+         
+    
     @classmethod
     def image_cat(cls, category_id):
         images = cls.objects.filter(category_id=category_id)

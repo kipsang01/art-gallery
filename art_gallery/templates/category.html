@@ -1,6 +1,6 @@
-{% include 'home.html' %}
+{% extends "base.html" %}
 
-{% block images%}
+{% block content%}
 
     <div class="images d-flex flex-wrap ">
     {% for image in images %}
@@ -10,4 +10,5 @@
     {%endfor%}  
     </div>
 
-{% endblock %}
+{% endblock%}
+
