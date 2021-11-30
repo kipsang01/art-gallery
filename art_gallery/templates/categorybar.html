@@ -1,5 +1,15 @@
 
-<div class="category d-flex  flex-row justify-content-around">
+<div class="container category d-flex  flex-row justify-content-around mt-3">
+    <div class="">
+        <div class="input-group-prepend">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Location</button>
+          <div class="dropdown-menu">
+              {% for location in locations%}
+                    <a class="dropdown-item" href="{% url 'get_by_location' location.id %}">{{ location}}</a>
+            {% endfor%}
+          </div>
+        </div>
+    </div>
     {% for category in categories  %}
     
         <span style="height: 50px; width: 50px;"> <a href="{% url 'get_category' category.id %}"> {{category}}</a> </span>

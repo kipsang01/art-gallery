@@ -1,11 +1,18 @@
 .category a{
     text-decoration:none;
 }
-.card img{
-    margin:10px;
-    height: 100%;
-    width: 100%;
-}
+
+.card:hover{
+    display: block;
+    opacity:0.9;
+ }
+ /*
 .modal{
     display: none;
+} */
+.card i{
+    color: white;
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
 }

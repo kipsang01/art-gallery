@@ -1,15 +1,17 @@
 from django.shortcuts import render
 from django.http  import HttpResponse, Http404
 from django.core.exceptions import ObjectDoesNotExist
-from .models import Category, Image
+from .models import Category, Image,Location
 
 # Create your views here.
 def home(request):
     images = Image.objects.all()
     categories = Category.objects.all()
+    locations = Location.objects.all()
     context={
         'categories':categories,
         'images' : images,
+        'locations':locations,
     }
     return render(request, 'home.html', context)
 
@@ -48,6 +50,16 @@ def search_results(request):
 def get_category(request,category):
     categories = Category.objects.all()
     images = Image.image_cat(category)
+    context={
+        'categories':categories,
+        'images' : images,
+    }
+    return render(request, 'category.html', context)
+
+
+def get_by_locations(request,location):
+    categories = Category.objects.all()
+    images = Image.images_by_location(location)
     context={
         'categories':categories,
         'images' : images,

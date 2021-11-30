@@ -1,10 +1,12 @@
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
+<nav class="navbar navbar-light bg-light mt-3">
+    <div class="container">
       <a class="navbar-brand">Art-Gallery</a>
-      
+      <a class="text-dark " href="{% url 'gallery_home' %}"><i class="fas fa-home mr-3">Home</i></a>
       <form class="d-flex" role="search" action="{% url 'search_results' %}">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+        <div class="group d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search name" aria-label="Search" name="search">
         <button class="btn btn-outline-primary" type="submit">Search</button>
+        </div>
       </form>
     </div>
   </nav>
